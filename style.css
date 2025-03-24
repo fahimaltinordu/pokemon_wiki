@@ -1,0 +1,163 @@
+*{
+    border:0;
+    outline:0;
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+body {
+    background-color: #000000;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100dvh;
+}
+.container {
+    width:100%;
+    height:99%;
+    padding: 10px 15px;
+    display:flex;
+    align-items:center;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#title {
+    color: #5b3280;
+}
+.inputContainer {
+    margin-top:20px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:15px;
+}
+#search {
+    height: 30px;
+    border-radius:5px;
+    text-align:center;
+}
+#search::placeholder{
+    color: #5b3280;
+    opacity:0.5;
+}
+#searchBtn, #back, #next {
+    height:30px;
+    padding:2px 7px;
+    border-radius:5px;
+    background-color: #5b3280;
+    color:white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#info {
+    margin: 5px 0 15px 0;
+    text-align: center;
+    color: white;
+}
+#pokemons {
+    width:95%;
+    /* height:100%; */
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:10px;
+}
+
+.pokeImg {
+    width:70px;
+    height: 70px;
+}
+.card {
+    position: relative;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    font-weight: 700;
+    padding: 25px 0 15px 0;
+    border-radius: 8px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#pokeID {
+    background: #5b3280;
+    color:white;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    font-weight: 700;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+#footer{
+    margin-top: 10px;
+    margin-bottom:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+
+#details {
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    padding: 30px;
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainDom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.detailedImg {
+    width:120px;
+    margin-top: 20px;
+}
+.general {
+    text-align: center;
+}
+#abilityDom, #typeDom {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    flex-direction: column;
+}
+
+.ability, .type {
+    background-color: #5b3280;
+    color:aliceblue;
+    padding:10px;
+    border-radius: 10px;
+    width:100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+}
+.type {
+    background-color: #11aa4c;
+}
+#statDom {
+    border: 2px solid #5b3280;
+    padding: 10px;
+}
