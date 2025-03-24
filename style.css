@@ -161,3 +161,12 @@ body {
     border: 2px solid #5b3280;
     padding: 10px;
 }
+#loader {
+    display:none;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+}
+#loader img {
+    width:150px;
+}

@@ -8,6 +8,7 @@ let pokeInfo = document.querySelector('#info');
 let detailsDom = document.querySelector('#details');
 let mainContainer = document.querySelector('.container');
 let card = document.querySelector('.card');
+let loader = document.querySelector('#loader');
 
 let url = "https://pokeapi.co/api/v2/pokemon/";
 let imageLink = "https://img.pokemondb.net/artwork/large/"
@@ -26,10 +27,13 @@ function getDetails() {
     if(searchInput.value == ""){
         alert('Enter pokemon name')
     }else {
+        loader.style.display='flex'
+
         fetch(url+searchInput.value)
         .then(response => {
             if (response.status != 200) {
               alert(response.status + ' not found');
+              loader.style.display='none'
               return
             } else {
                 return response
@@ -38,7 +42,8 @@ function getDetails() {
         .then(response => response.json())
         .then((data)=> {
             console.log(data);
-    
+
+            loader.style.display='none'
             detailsDom.innerHTML = '';
     
             let abilityDom = '';
