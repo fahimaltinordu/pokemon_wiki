@@ -14,22 +14,27 @@ let url = "https://pokeapi.co/api/v2/pokemon/";
 let imageLink = "https://img.pokemondb.net/artwork/large/"
 
 
-searchBtn.addEventListener('click', getDetails) 
+searchBtn.addEventListener('click', ()=> {
+    let searchName = searchInput.value;
+    console.log(searchName);
+    getDetails(searchName)
+}) 
 
-let zoom = (parametre) => {
-    console.log(parametre);
+let zoom = (pokemonName) => {
+    console.log(pokemonName);
+    getDetails(pokemonName)
 }  
 
 
-function getDetails() {
-    console.log(searchInput.value); 
+function getDetails(pokemonName) {
+    console.log(pokemonName); 
 
-    if(searchInput.value == ""){
+    if(pokemonName ==''){
         alert('Enter pokemon name')
     }else {
         loader.style.display='flex'
 
-        fetch(url+searchInput.value)
+        fetch(url+pokemonName)
         .then(response => {
             if (response.status != 200) {
               alert(response.status + ' not found');
@@ -76,11 +81,11 @@ function getDetails() {
                 </div>
                 <div id='abilityDom'>
                     <div style='font-weight:bold;'>Abilities</div>
-                    <div style='display:flex;gap:10px;'>${abilityDom}</div>
+                    <div style='display:flex;gap:10px;flex-wrap: wrap; justify-content: center;'>${abilityDom}</div>
                 </div>
                 <div id='typeDom'>
                     <div style='font-weight:bold;'>Skin Types</div>
-                    <div style='display:flex;gap:10px;'>${typeDom}</div>
+                    <div style='display:flex;gap:10px;flex-wrap: wrap; justify-content: center;'>${typeDom}</div>
                 </div>
                 <div id='statDom'>
                     ${statDom}
@@ -108,7 +113,7 @@ function getFirst20Poke(url) {
         let pokemons = '';
         data.results.forEach((result,index) => {
             let pokeID = result.url.split('/')[result.url.split('/').indexOf('pokemon') + 1]
-            pokemons += `<div class='card' onclick="zoom(${result.name})">
+            pokemons += `<div class='card' onclick="zoom('${result.name}')">
                 <div id='pokeInfo'>
                     <p id='pokeID'>#${pokeID} </p>
                     <p>${(result.name).toUpperCase()} </p>
